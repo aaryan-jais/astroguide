@@ -8,308 +8,150 @@ import {
 } from "react-icons/fa";
 
 function Festivals() {
-
   const festivals = [
-    {
-      title:"Pongal 2026",
-      date:"2026-01-14",
-      desc:"Harvest festival celebrated with gratitude."
-    },
-    {
-      title:"Basant Panchmi 2026",
-      date:"2026-01-23",
-      desc:"Festival dedicated to Goddess Saraswati."
-    },
-    {
-      title:"Holika Dahan 2026",
-      date:"2026-03-02",
-      desc:"Victory of good over evil."
-    },
-    {
-      title:"Holi 2026",
-      date:"2026-03-03",
-      desc:"Festival of colors."
-    },
-    {
-      title:"Chaitra Navratri",
-      date:"2026-03-20",
-      desc:"Nine-day spiritual celebration."
-    },
-    {
-      title:"Ram Navami",
-      date:"2026-03-28",
-      desc:"Birth of Lord Rama."
-    },
-    {
-      title:"Raksha Bandhan",
-      date:"2026-08-09",
-      desc:"Celebration of sibling love."
-    },
-    {
-      title:"Janmashtami",
-      date:"2026-09-03",
-      desc:"Birth celebration of Krishna."
-    },
-    {
-      title:"Diwali",
-      date:"2026-11-08",
-      desc:"Festival of lights."
-    },
-    {
-      title:"Christmas",
-      date:"2026-12-25",
-      desc:"Celebration of Jesus Christ."
-    }
+    { title: "Pongal 2026", date: "2026-01-14", desc: "Harvest festival celebrated with gratitude." },
+    { title: "Basant Panchmi 2026", date: "2026-01-23", desc: "Festival dedicated to Goddess Saraswati." },
+    { title: "Holika Dahan 2026", date: "2026-03-02", desc: "Victory of good over evil." },
+    { title: "Holi 2026", date: "2026-03-03", desc: "Festival of colors." },
+    { title: "Chaitra Navratri", date: "2026-03-20", desc: "Nine-day spiritual celebration." },
+    { title: "Ram Navami", date: "2026-03-28", desc: "Birth of Lord Rama." },
+    { title: "Raksha Bandhan", date: "2026-08-09", desc: "Celebration of sibling love." },
+    { title: "Janmashtami", date: "2026-09-03", desc: "Birth celebration of Krishna." },
+    { title: "Diwali", date: "2026-11-08", desc: "Festival of lights." },
+    { title: "Christmas", date: "2026-12-25", desc: "Celebration of Jesus Christ." },
   ];
 
-  const itemsPerPage=2;
+  const itemsPerPage = 2;
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const [currentPage,setCurrentPage]=useState(1)
+  const totalPages = Math.ceil(festivals.length / itemsPerPage);
 
-  const totalPages=Math.ceil(
-    festivals.length/itemsPerPage
-  );
+  const start = (currentPage - 1) * itemsPerPage;
 
-  const start=(currentPage-1)*itemsPerPage;
+  const currentFestivals = festivals.slice(start, start + itemsPerPage);
 
-  const currentFestivals=
-  festivals.slice(
-    start,
-    start+itemsPerPage
-  );
-
-  const [selectedDate,setSelectedDate]=
-  useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(new Date());
 
   return (
-
-<section className="py-24 px-5 bg-[#f8f5ef] relative" style={{
+    <section
+      className="py-16 sm:py-20 md:py-24 px-4 sm:px-5 bg-[#f8f5ef] relative"
+      style={{
         backgroundImage: "url('/images/service-bg.png')",
-        
-      }}>
-         <div className="absolute inset-0 bg-[#fff]/65"></div>
+      }}
+    >
+      <div className="absolute inset-0 bg-white/65"></div>
 
-<div className="relative z-10 max-w-3xl sm:max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto">
 
-<div className="text-center mb-14">
+        {/* Header */}
+        <div className="text-center mb-10 sm:mb-14">
+          <span className="px-4 sm:px-5 py-2 rounded-full bg-[#D5846E]/10 text-[#D5846E] uppercase text-sm sm:text-base">
+            Festivals
+          </span>
 
-<span className="
-px-5
-py-2
-rounded-full
-bg-[#D5846E]/10
-text-[#D5846E]
-uppercase
-">
-Festivals
-</span>
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-josefin mt-4 sm:mt-6">
+            Festivals & Calendar ✨
+          </h2>
+        </div>
 
-<h2 className="
-text-4xl
-md:text-6xl
-font-josefin
-mt-6
-">
-Festivals & Calendar ✨
-</h2>
+        {/* Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-start">
 
-</div>
+          {/* Festival List */}
+          <div className="lg:col-span-2 bg-white rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
 
-<div className="
-grid
-lg:grid-cols-3
-gap-8
-">
+            <h3 className="text-2xl sm:text-3xl font-josefin mb-6 sm:mb-8">
+              Festival 2026
+            </h3>
 
-{/* Festival List */}
+            <div className="space-y-4 sm:space-y-5">
 
-<div className="
-lg:col-span-2
-bg-white
-rounded-3xl
-p-8
-shadow-xl
-">
+              {currentFestivals.map((item, index) => (
+                <div
+                  key={index}
+                  className="border rounded-2xl p-4 sm:p-5 hover:shadow-lg hover:border-[#D5846E] duration-300"
+                >
+                  <div className="flex justify-between items-center">
 
-<h3 className="
-text-3xl
-font-josefin
-mb-8
-">
-Festival 2026
-</h3>
+                    <div>
+                      <h4 className="text-lg sm:text-xl font-semibold">
+                        {item.title}
+                      </h4>
 
-<div className="space-y-5">
+                      <p className="text-gray-500 mt-1 sm:mt-2 text-sm sm:text-base">
+                        {item.date}
+                      </p>
+                    </div>
 
-{currentFestivals.map(
-(item,index)=>(
+                    <FaCalendarAlt className="text-[#D5846E] text-xl sm:text-2xl" />
+                  </div>
 
-<div
-key={index}
-className="
-border
-rounded-2xl
-p-5
-hover:shadow-lg
-hover:border-[#D5846E]
-duration-300
-"
->
+                  <p className="mt-3 sm:mt-4 text-gray-600 leading-6 sm:leading-7 text-sm sm:text-base">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
 
-<div className="
-flex
-justify-between
-items-center
-">
+            </div>
 
-<div>
+            {/* Pagination */}
+            <div className="flex justify-center items-center gap-3 sm:gap-4 mt-8 sm:mt-10">
 
-<h4 className="
-text-xl
-font-semibold
-">
-{item.title}
-</h4>
+              <button
+                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#21212C] text-white flex items-center justify-center"
+              >
+                <FaChevronLeft />
+              </button>
 
-<p className="
-text-gray-500
-mt-2
-">
-{item.date}
-</p>
+              <span className="text-sm sm:text-base">
+                {currentPage} / {totalPages}
+              </span>
 
-</div>
+              <button
+                onClick={() =>
+                  setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+                }
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#D5846E] text-white flex items-center justify-center"
+              >
+                <FaChevronRight />
+              </button>
 
-<FaCalendarAlt
-className="
-text-[#D5846E]
-text-2xl
-"
-/>
+            </div>
 
-</div>
+          </div>
 
-<p className="
-mt-4
-text-gray-600
-leading-7
-">
-{item.desc}
-</p>
+          {/* Calendar */}
+          <div className="bg-white rounded-3xl shadow-xl p-5 sm:p-6 w-full">
 
-</div>
+            <h3 className="text-xl sm:text-2xl font-josefin mb-4 sm:mb-6">
+              Calendar 2026
+            </h3>
 
-))}
-</div>
+            <Calendar
+              onChange={setSelectedDate}
+              value={selectedDate}
+              className="w-full"
+            />
 
-{/* Pagination */}
+            <div className="mt-6 bg-[#FFF6E9] p-4 rounded-xl">
 
-<div className="
-flex
-justify-center
-items-center
-gap-4
-mt-10
-">
+              <p className="font-semibold text-sm sm:text-base">
+                Selected Date
+              </p>
 
-<button
-onClick={()=>
-setCurrentPage(
-prev=>Math.max(prev-1,1)
-)
-}
-className="
-w-12
-h-12
-rounded-full
-bg-[#21212C]
-text-white
-inline-block
-px-4
-"
->
-<FaChevronLeft/>
-</button>
+              <p className="text-gray-600 text-sm sm:text-base">
+                {selectedDate.toDateString()}
+              </p>
 
-<span>
-{currentPage} / {totalPages}
-</span>
+            </div>
 
-<button
-onClick={()=>
-setCurrentPage(
-prev=>Math.min(
-prev+1,
-totalPages
-)
-)
-}
-className="
-w-12
-h-12
-rounded-full
-bg-[#D5846E]
-text-white
-inline-block
-px-4
-"
->
-<FaChevronRight/>
-</button>
+          </div>
 
-</div>
+        </div>
 
-</div>
-
-{/* Calendar */}
-
-<div className="
-bg-white
-rounded-3xl
-shadow-xl
-p-6
-">
-
-<h3 className="
-text-2xl
-font-josefin
-mb-6
-">
-Calendar 2026
-</h3>
-
-<Calendar
-onChange={setSelectedDate}
-value={selectedDate}
-/>
-
-<div className="
-mt-6
-bg-[#FFF6E9]
-p-4
-rounded-xl
-">
-
-<p className="
-font-semibold
-">
-Selected Date
-</p>
-
-<p className="text-gray-600">
-{selectedDate.toDateString()}
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
+      </div>
+    </section>
   );
 }
 
