@@ -17,7 +17,8 @@ function Navbar() {
 
       <div className="max-w-7xl mx-auto px-5 py-5 flex justify-between items-center">
 
-       <Link to="/"> <h1 className="text-3xl font-josefin font-bold">
+       <Link to="/"> 
+       <h1 className="text-3xl font-josefin font-bold">
           Astro
           <span className="text-[#D5846E]">
             Guide

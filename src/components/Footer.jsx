@@ -7,6 +7,7 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -32,7 +33,8 @@ function Footer() {
           {/* Logo + About */}
           <div>
 
-           <Link to="/"> <h2 className="
+           <Link to="/">
+            <h2 className="
               font-josefin
               text-3xl
               font-bold
@@ -42,7 +44,8 @@ function Footer() {
               <span className="text-[#D5846E]">
                 Guide
               </span>
-            </h2></Link>
+            </h2>
+            </Link>
 
             <p className="
               mt-5
@@ -103,13 +106,13 @@ function Footer() {
               text-gray-600
               font-poppins
             ">
-              <li><a href="#home" className="hover:text-[#D5846E] duration-300">Home</a></li>
+              <li> <Link to="/" className="hover:text-[#D5846E] duration-300">Home</Link></li>
 
-              <li><a href="#about" className="hover:text-[#D5846E] duration-300">About Us</a></li>
+              <li><Link to="/about" className="hover:text-[#D5846E] duration-300">About Us</Link></li>
 
-              <li><a href="#services" className="hover:text-[#D5846E] duration-300">Services</a></li>
+              <li><Link to="/services" className="hover:text-[#D5846E] duration-300">Services</Link></li>
 
-              <li><a href="#contact" className="hover:text-[#D5846E] duration-300">Contact Us</a></li>
+              <li><Link to="/contact" className="hover:text-[#D5846E] duration-300">Contact Us</Link></li>
             </ul>
 
           </div>
