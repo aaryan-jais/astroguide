@@ -107,11 +107,11 @@ function HoroscopePage() {
             md:text-5xl
             lg:text-6xl
             
-            mt-6
+            mt-8
             uppercase
             "
           >
-            Horoscope Predictions ✨
+            Horoscope Predictions 
           </h2>
 
         </div>

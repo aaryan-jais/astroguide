@@ -49,8 +49,8 @@ function Festivals() {
             Festivals
           </span>
 
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-josefin mt-4 sm:mt-6">
-            Festivals & Calendar ✨
+          <h2 className="text-3xl uppercase sm:text-4xl md:text-6xl font-josefin mt-4 sm:mt-6">
+            Festivals & Calendar 
           </h2>
         </div>
 

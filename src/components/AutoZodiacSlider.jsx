@@ -88,10 +88,11 @@ function AutoZodiacSlider() {
             key={index}
             className="
             min-w-[260px]
-            bg-[#1a1a2d]
+            bg-white/5
             p-8
             rounded-2xl
             border
+            hover:bg-[#2D2D3C]
             border-[#2a2a42]
             shadow-xl
             hover:scale-105
