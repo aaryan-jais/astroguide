@@ -62,7 +62,7 @@ function HoroscopePage() {
     <section
       className="
       py-16
-      md:py-24
+      md:py-22
       px-4
       sm:px-6
       lg:px-8

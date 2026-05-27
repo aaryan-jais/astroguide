@@ -5,6 +5,7 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import Pricing from "../components/Pricing";
 import HoroscopeDetails from "./HoroscopeDetails";
 import Festivals from "../components/Festivals";
+import AutoZodiacSlider from "../components/AutoZodiacSlider";
 
 function Home() {
   return (
@@ -12,7 +13,7 @@ function Home() {
       <section id="home">
         <Hero />
       </section>
-
+       <AutoZodiacSlider />
       
       <HoroscopeDetails />
       <Features />
