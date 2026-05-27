@@ -1,0 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-josefin: "Josefin Sans", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+   --animate-float: float 4s ease-in-out infinite;
+}
+body {
+  font-family: var(--font-poppins);
+}
+h1,h2,h3,h4,h5,h6{
+   font-family: var(--font-josefin);
+}
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
