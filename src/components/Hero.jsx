@@ -7,14 +7,14 @@ function Hero() {
     <section
       className="
         relative
-        min-h-screen
+       
         bg-cover
         bg-center
         bg-no-repeat
         flex
         items-center
         justify-center
-        px-5 sm:px-8 lg:px-10
+        px-5 py-20 sm:px-8 sm:py-30 lg:py-44 lg:px-10
       "
       style={{
         backgroundImage: "url('/images/hero-bg.png')",
