@@ -26,7 +26,7 @@ function Navbar() {
 
         <ul className="hidden lg:flex gap-10 items-center">
 
-          {menus.map((item,index)=>(
+          {menus.map((item, index) => (
             <Link
               key={index}
               to={item.path}
@@ -53,10 +53,10 @@ function Navbar() {
         </ul>
 
         <button
-          onClick={()=>setOpen(!open)}
+          onClick={() => setOpen(!open)}
           className="lg:hidden text-2xl"
         >
-          {open ? <FaTimes/> : <FaBars/>}
+          {open ? <FaTimes /> : <FaBars />}
         </button>
 
       </div>
@@ -65,21 +65,22 @@ function Navbar() {
 
         <div className="lg:hidden bg-white p-5 space-y-5">
 
-          {menus.map((item,index)=>(
+          {menus.map((item, index) => (
             <Link
               key={index}
               to={item.path}
               className="block"
+              onClick={() => setOpen(false)}
             >
               {item.name}
             </Link>
           ))}
 
-          <Link to="/login" className="block">
+          <Link to="/login" className="block" onClick={() => setOpen(false)}>
             Login
           </Link>
 
-          <Link to="/signup" className="block">
+          <Link to="/signup" className="block" onClick={() => setOpen(false)}>
             Signup
           </Link>
 

@@ -89,7 +89,7 @@ function Festivals() {
       }}>
          <div className="absolute inset-0 bg-[#fff]/65"></div>
 
-<div className="relative z-10 max-w-7xl mx-auto">
+<div className="relative z-10 max-w-3xl sm:max-w-7xl mx-auto">
 
 <div className="text-center mb-14">
 
