@@ -66,7 +66,7 @@ function HoroscopePage() {
       px-4
       sm:px-6
       lg:px-8
-      min-h-screen
+      
       bg-cover
       bg-center
       relative
