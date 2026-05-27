@@ -32,7 +32,7 @@ function Footer() {
           {/* Logo + About */}
           <div>
 
-            <h2 className="
+           <Link to="/"> <h2 className="
               font-josefin
               text-3xl
               font-bold
@@ -42,7 +42,7 @@ function Footer() {
               <span className="text-[#D5846E]">
                 Guide
               </span>
-            </h2>
+            </h2></Link>
 
             <p className="
               mt-5
